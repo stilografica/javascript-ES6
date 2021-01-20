@@ -75,3 +75,26 @@ const getReverse = myString =>  {
 getReverse("Hello everybody");
 
 
+//Exercici 5: Reemplaça bloc de codi la promesa per async/await
+
+//Función b() en formato flecha con código para testear que funciona
+const b = () => {
+    let promise = new Promise((resolve) => {
+        setTimeout(() => resolve("¡Hecho!"), 1000)
+    });
+    return promise;
+}
+//Función async a() en formato flecha en la que incorporo el await en la función b()
+const a = async () => {
+    let c = await b();
+    //para testear que doMoreWork espera la ejecución de b()
+    console.log(c);
+    doMoreWork();
+}
+//Llamo a la función a()
+a();
+//Declaro la función doMoreWork con código propio para poder testear
+const doMoreWork = () => {
+    console.log(5);
+}
+
