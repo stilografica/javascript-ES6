@@ -64,3 +64,14 @@ Nota: no fa falta fer un "join".*/
 var epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
 let answer= epic.reduce((prev, curr) => `${prev} ${curr}`);
 console.log(answer);
+
+
+//Exercici 4: Crear una funció que accepti un string i retornada aquest string revertit. Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
+ 
+const getReverse = myString =>  {
+    console.log([...myString].reverse());
+}
+
+getReverse("Hello everybody");
+
+
