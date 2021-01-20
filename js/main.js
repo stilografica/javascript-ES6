@@ -125,3 +125,30 @@ console.log(arr);
 let result = tasks.map((task) => task.name);
 console.log(result);
     
+//NIVELL2
+/*Exercici 7: Comento el ejercicio 7 para poder hacer el 8 sin que salten prompts al ejecutarlo
+
+/*Realitzar un programa en ES6, amb al menys una funció.
+Aquest programa demana a l'usuari dos nombres de l'1 a l'10 (con promp es suficient). 
+Un cop introduïts, es mostra per consola la taula de multiplicar del número 1 que va fins al número 2.*/
+
+/*Pido los números al usuario mediante dos prompts*/
+let number1 = prompt("Escriu un número",1);
+let number2 = prompt("Escriu un número",2);
+
+let numAux=1;
+//Función que hace la operación y la muestra por pantalla usando la recursividad
+const tabla = (numAux) => {//Default param para inicializar numAux a 1
+    //indico que sólo entre en la condición si el multiplicador actual (numAux) es más pequeño o igual al máx multiplicador indicado por el usuario en el prompt
+    if(numAux<=number2){
+        //Imprimo por consola el multiplicando por el multiplicador actual igual al producto
+        if((number1 != "" && number1 <= 10  && number1 >= 1) && (number2 != "" && number2 <= 10 && number2 >= 1)){ //Si ambos inputs tienen valores y el número es igual o menor a 10
+            console.log(`${number1}x${numAux}=${number1*numAux}`);
+            //la función tabla se llama a si misma incrementando 1 el valor del numAux
+            tabla(numAux+1);
+        } else {
+            alert("Escribe números del 1 al 10");
+        } 
+    }
+} 
+tabla(numAux);
