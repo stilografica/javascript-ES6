@@ -132,7 +132,7 @@ console.log(result);
 Aquest programa demana a l'usuari dos nombres de l'1 a l'10 (con promp es suficient). 
 Un cop introduïts, es mostra per consola la taula de multiplicar del número 1 que va fins al número 2.*/
 
-/*Pido los números al usuario mediante dos prompts*/
+/*Pido los números al usuario mediante dos prompts
 let number1 = prompt("Escriu un número",1);
 let number2 = prompt("Escriu un número",2);
 
@@ -151,4 +151,62 @@ const tabla = (numAux) => {//Default param para inicializar numAux a 1
         } 
     }
 } 
-tabla(numAux);
+tabla(numAux);*/
+
+
+//Exercici 8: Modificar l'exercici anterior perquè els números s'introdueixin a través d'un formulari (amb validacions), i que la taula de multiplicar la mostri en una taula HTML
+
+//Función que hace la operación y la muestra por pantalla usando la recursividad
+document.getElementById("submit").addEventListener ("click", () => {
+    let number1 = document.forms["maths"]["number1"]; //Recojo el input number1
+    let number2 = document.forms["maths"]["number2"]; //Recojo el input number2
+    //Si algun input tiene la clase "is-invalid" la eliminamos y los mensajes de error sin contenido
+    number1.classList.remove("is-invalid"); 
+    document.getElementById("error1").textContent ="";
+    number2.classList.remove("is-invalid");
+    document.getElementById("error2").textContent ="";
+
+    if(number1.value == "" || number1.value > 10 || number1.value < 1){ //Valores vacíos no válidos o más grandes de 10
+        number1.classList.add("is-invalid"); //Añado la classe de bootstrap "is-invalid"
+        document.getElementById("error1").textContent = "Debes escribir un número del 1 al 10"; //Texto de error para el usuario
+    } 
+        
+    if(number2.value == "" || number2.value > 10 || number2.value < 1) { //Valores vacíos no válidos o más grandes de 10
+        number2.classList.add("is-invalid"); //Añado la classe de bootstrap "is-invalid"
+        document.getElementById("error2").textContent = "Debes escribir un número del 1 al 10"; //Texto de error para el usuario
+    } 
+
+    if((number1.value != "" && number1.value <= 10  && number1.value >= 1) && (number2.value != "" && number2.value <= 10 && number2.value >= 1)){ //Si ambos inputs tienen valores y el número es igual o menor a 10
+        let tablaResponsive = document.getElementById("tabla"); //Recojo el elemento html para la tabla
+        tablaResponsive.classList.add("table"); //Asigno la clase tabla  
+        changePage();
+        makeTable(number1, number2, tablaResponsive);
+    }   
+});
+
+const makeTable = (number1, number2, tablaResponsive, numAux=1) => { //Default param para inicializar numAux a 1
+    //indico que sólo entre en la condición si el multiplicador actual (numAux) es más pequeño o igual al máx multiplicador indicado por el usuario en el prompt
+    if(numAux<=number2.value){
+        let row = document.createElement("tr"); //Creamos 
+        tablaResponsive.appendChild(row);
+        let data= document.createElement("td");
+        row.appendChild(data);
+        data.textContent = `${number1.value}x${numAux}`;
+        let data2= document.createElement("td");
+        row.appendChild(data2);
+        data2.textContent = `= ${number1.value*numAux}`;
+        //la función maketable se llama a si misma incrementando 1 el valor del numAux
+        makeTable(number1, number2, tablaResponsive,numAux+1);      
+    } 
+} 
+
+const changePage = () => { //Oculto la página del form y muestro en la que aparecerá la tabla
+    document.getElementById("box1").style.display = "none";
+    document.getElementById("box2").style.display = "block";
+
+}
+
+
+
+
+

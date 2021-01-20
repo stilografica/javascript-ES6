@@ -1,0 +1,176 @@
+/*------- START CUSTOM STYLES--------*/
+
+//Open Sans Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+//Variables
+$primary: #fdd119;
+$secondary: #dd1a21;
+$info: #0255ba;
+$blue: #339dda;
+$black: #000;
+$white: #fff;
+
+//Shadow
+@mixin dropShadow {
+  box-shadow: 
+      0 4px 8px rgba(0,0,0,0.08), 
+      0 8px 16px rgba(0,0,0,0.08),
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2500' height='1000' preserveAspectRatio='none' viewBox='0 0 2500 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2534%26quot%3b)' fill='none'%3e%3crect width='2500' height='1000' x='0' y='0' fill='rgba(51%2c 157%2c 218%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c701.057C128.064%2c680.183%2c189.563%2c534.791%2c295.953%2c460.512C396.679%2c390.188%2c555.962%2c388.949%2c607.05%2c277.23C658.136%2c165.515%2c567.515%2c42.247%2c542.188%2c-77.955C518.804%2c-188.936%2c533.318%2c-312.282%2c463.935%2c-402.002C393.249%2c-493.407%2c277.832%2c-536.374%2c165.802%2c-564.668C56.789%2c-592.2%2c-61.409%2c-605.282%2c-164.653%2c-560.755C-263.425%2c-518.157%2c-308.55%2c-409.678%2c-380.003%2c-329.274C-452.574%2c-247.612%2c-541.89%2c-183.625%2c-587.869%2c-84.523C-645.574%2c39.853%2c-720.264%2c178.951%2c-676.002%2c308.72C-631.529%2c439.108%2c-484.36%2c499.125%2c-365.209%2c568.277C-250.862%2c634.641%2c-130.488%2c722.326%2c0%2c701.057' fill='%232386bf'%3e%3c/path%3e%3cpath d='M2500 1643.433C2617.998 1624.455 2718.619 1561.238 2819.056 1496.461 2919.333 1431.787 3041.79 1378.318 3084.07 1266.7359999999999 3125.92 1156.291 3042.785 1040.813 3036.397 922.878 3029.14 788.887 3131.379 630.4590000000001 3044.087 528.546 2956.934 426.79499999999996 2787.625 482.56399999999996 2653.802 476.19899999999996 2550.992 471.30899999999997 2454.453 486.85299999999995 2351.901 495.621 2219.591 506.934 2071.802 458.221 1963.605 535.211 1851.893 614.702 1779.306 760.62 1787.1219999999998 897.504 1794.762 1031.304 1948.2179999999998 1104.661 2003.103 1226.925 2058.545 1350.429 2003.633 1523.96 2107.383 1610.925 2210.104 1697.028 2367.666 1664.717 2500 1643.433' fill='%2357afe1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2534'%3e%3crect width='2500' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    @media screen and (max-width:790px){
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  .app{
+    width: 18.75rem;
+    height: 43.75rem;
+    background-color: $blue;
+    border-radius: 4rem;
+    border: 4px solid $white;
+    @include dropShadow;
+    #box1, #box2 {
+      img{
+        display: block;
+        width: 5.625rem;
+        margin: 0 auto;
+      }
+
+      h1{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: $white;
+        text-align: center;
+        padding-top: 1.063rem;
+      }
+      //Form
+      #maths{
+        text-align: center;
+
+        label{
+          font-family: 'Open Sans', sans-serif!important;
+          font-size: 1rem;
+          color: $white;
+          font-weight: 600!important;
+          padding-top: 0.625rem; 
+        }
+        .form-control {
+          font-family: 'Open Sans', sans-serif!important;
+          font-size: 1.25rem;
+          font-weight: 600!important;
+          color: $info!important;
+          text-align: center;
+          background-color: $primary!important;
+          border: none!important;
+          border-radius: 50px!important;
+          height: 2.813rem!important;
+        }
+
+        .invalid-feedback {
+          background-color: #fff;
+          width: fit-content;
+          margin: 4px auto;
+        } 
+
+        .btn-secondary{
+          margin-top: 0.625rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+    #box1{
+      padding: 1.875rem;
+    }
+    #box2{
+       display:none;
+      padding-top: 1.875rem;
+      .table{
+        width: 50%!important;
+        margin: 0 auto;
+        padding-top: 1.25rem;
+
+        td {
+          font-family: 'Open Sans', sans-serif!important;
+          font-size: 0.938rem;
+          font-weight: 600!important;
+          color: $white;
+          text-align: center;
+          border-top: 3px solid $primary;
+          min-width: 4.375rem;
+        }
+      }
+    }   
+  }
+  //Happy face
+  .rectangle { //top element
+    position: absolute;
+    background-color: $primary;
+    height: 0.938rem;
+    width:2.813rem;
+    border-radius: 2px;
+    transform: translate(28px,-8px);
+    box-shadow: 0 -6px 8px rgba(0,0,0,0.08), 
+  }
+
+  //Face
+  .face {
+    width: 6.25rem;
+    height: 6.25rem;
+    position: relative;
+    margin: 1.25rem auto;
+    border-radius:  15px;
+    background: $primary;
+    transform: rotate(15deg);
+    animation: bota 1s alternate infinite ease-in;
+    z-index: 1;
+    @include dropShadow;
+
+  }
+  
+  .eye {
+    position: absolute;
+    width: 0.625rem;
+    height: 0.625rem;
+    top: 2rem;
+    left: 1.563rem;
+    z-index: 1;
+    border-radius: 50%;
+    background: $black;
+    //Right eye
+    &:last-child {
+      left: auto;
+      right: 1.563rem;
+    }
+}
+  //Mouth
+  .smile {
+    position: absolute;
+    top: 3.188rem;
+    left: 1.563rem;
+    width: 3.125rem;
+    height: 1.563rem;
+    background: transparent;
+    border-radius: 0 0 50px 50px;
+    border: 4px solid $black;
+    border-top: 0;
+  }
+}
+  //Face animation
+  @keyframes bota{
+    90%{
+      height: 6.25rem;
+    }
+    100%{
+      transform: translateY(60px);
+      height: 5.938rem;
+    }
+  }
+/* -------/END CUSTOM STYLES-------- */  
