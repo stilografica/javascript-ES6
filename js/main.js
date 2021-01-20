@@ -98,3 +98,30 @@ const doMoreWork = () => {
     console.log(5);
 }
 
+//Exercici 6: Tenim un array de tasques i volem aconseguir un array que contingui únicament els noms de les tasques. 
+let tasks = [
+{
+    'name' : 'Start React web',
+    'duration' : 120
+},
+{
+    'name' : 'Work out',
+    'duration' : 60
+},
+{
+    'name' : 'Procrastinate on facebook',
+    'duration' : 240
+}
+];    
+    
+//- Usar .forEach() per obtenir aquest array.
+let arr = [];
+tasks.forEach((item) => {    
+    arr.push(item.name);
+});
+console.log(arr);
+    
+//- Usar .map() per obtenir aquest array.
+let result = tasks.map((task) => task.name);
+console.log(result);
+    
