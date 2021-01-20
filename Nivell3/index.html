@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search form</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="./styles/css/main.css">
+</head>
+<body>
+    <article class="container">
+        <section class="app">
+            <img src="img/logoITAcademy.png" alt="logotipo IT Academy">
+            <article class="white">
+                <h1>Learn code,<br>enjoy code.</h1>
+                <!--Man illustrator with svg Code-->
+                <img src="img/manCode.svg" alt="logotipo IT Academy">
+                <button id="start">Start</button>
+        </article>
+<article class="user-icons">
+    <img src="img/cursos.svg" alt="icono cursos" class="icons">
+    <img src="img/chat.svg" alt="icono chat" class="icons">
+</article>
+        </section>
+        <section class="app">
+            <img src="img/logoITAcademy.png" alt="logotipo IT Academy">
+            <h2>Hola Marc,</h2>
+            <input type="text" id="myInput" onkeyup="filterNames()" placeholder="Busca tu mentor..." title="Buscar nombre">
+            <ul id="myUL">
+                <li><a href="#">Albert</a></li>
+                <li><a href="#">Ismael</a></li>
+                <li><a href="#">Luis</a></li>
+                <li><a href="#">Rubén</a></li>
+                <li><a href="#">Jonatan</a></li>
+                <li><a href="#">Jake</a></li>
+                <li><a href="#">Jose</a></li>
+            </ul>
+            <section class="courses">
+                <article class="course html">
+                    <img src="img/html5.svg" alt="HTML logo">
+                </article>
+                <article class="course react">
+                    <img src="img/react-2.svg" alt="React logo">
+                </article>
+                <article class="course angular">
+                    <img src="img/angular-icon-1.svg" alt="angular logo">
+                </article>
+            </section>
+            <article class="user-icons">
+                <img src="img/cursos.svg" alt="icono cursos" class="icons">
+                <img src="img/chat.svg" alt="icono chat" class="icons">
+            </article>
+        </section>
+    </article>
+    <script src="./js/main.js"></script>
+</body>
+</html>
