@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/custom.css">
     <title>Javascript ES6</title>
 </head>
 <body>
+     <!--Emoji-->
+     
+      <!--App-->
+    <article class="app">
+          <!--App página 1-->
+        <section id="box1" class=""> 
+            <img src="img/lego-logo.svg" alt="logotipo Lego">
+            <h1>Aprende divirténdote</h1>      
+            <form id="maths" name="maths">
+                <label for="number1">Escribe un número del 1 al 10</label>
+                <input type="number" class="form-control" id="number1" name="number1">
+                <section class ="invalid-feedback" id="error1"></section>
+                <label for="number2">Escribe otro número</label>
+                <input type="number" class="form-control" id="number2" name="number2">
+                <section class ="invalid-feedback" id="error2"></section>
+                <button class="btn btn-secondary" type="button" id="submit">Resultado</button>
+            </form>
+            <section class="happy">
+                <figure class="face">
+                  <span class="rectangle"></span>
+                  <span class="eyes">
+                    <span class="eye"></span>
+                    <span class="eye"></span>
+                  </span>
+                  <span class="smile"></span>
+                </figure>
+              </section>
+        </section>
+        <!--App página 2-->
+        <section id="box2">
+            <img src="img/lego-logo.svg" alt="logotipo Lego">
+            <!--En esta section generaremos con javascript la tabla-->
+            <section id="tabla"></section>
+        </section>
+
+    </article>
+
+    <!-- JAVASCRIPT SOURCES jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
+    <!--<script src="bootstrap/js/popper.min.js"></script>-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--Custom Javascript-->
+    <script src="./js/main.js"></script>
 </body>
 </html>
